@@ -2,6 +2,45 @@
 # Page Templates
 --------------------------------------------------------------*/
 
+/* Default Page Styling */
+body {
+  background-color: #222222;
+}
+
+/* Front Page */
+.home {
+  .site-content {
+    .type-post {
+        p, h2 {
+            color: $color__background-body;
+            font-family: $font__main;
+            font-weight: lighter;
+        }
+      .entry-content {
+        p {
+        }
+      }
+      .entry-meta {
+        h2 {
+          
+        }
+      }
+    }
+    button {
+        background: transparent;
+        box-shadow: none;
+        border: 1px solid #00cc00;
+        color: $color__text-main;
+        font-size: 1rem;
+        font-family: $font__main;
+        font-weight: lighter;
+        text-shadow: none;
+        padding: .8rem 1rem;
+        
+    }
+  }
+}
+
 /* All Archives Page */
 
 /* Submit a Quote Page */
