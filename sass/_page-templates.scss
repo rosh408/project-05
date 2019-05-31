@@ -7,62 +7,86 @@ body {
   background-color: #222222;
   .hfeed {
     padding: 2rem 1.4rem;
+    @include desktop {
+      text-align: center;
+    }
     .side-header {
       .site-branding {
         a {
+          max-width: 100%;
           img {
-            height: auto;
+            height: 2rem;
             width: 300px;
           }
         }
       }
     }
     .site-content {
-      .type-post {
-        p,
-        h2 {
-          color: $color__background-body;
-          font-family: $font__main;
-          font-weight: lighter;
-        }
-        .entry-content {
-          p {
+      @include desktop {
+        text-align: center;
+        .content-area {
+          position: relative;
+          &::before {
+            font-family: 'FontAwesome';
+            font-weight: 400;
+            content: '\f10d';
+            position: absolute;
+          }
+          &::after  {
+            font-family: 'FontAwesome';
+            font-weight: 400;
+            content: '\f10e';
+            position: absolute;
+
           }
         }
-        .entry-meta {
-          display: flex;
-          h2 {
-            margin: 0;
-            padding: 0;
-            white-space: nowrap;
-          }
-          .source {
-            margin: 0;
-            padding: 0;
-            color: $color__background-body;
-            a {
-              color: $color__text-main;
+      }
+      .content-area {
+        .site-main {
+          .type-post {
+            p,
+            h2 {
+              color: $color__background-body;
               font-family: $font__main;
-              font-style: italic;
-              font-size: 1.25rem;
               font-weight: lighter;
-              text-decoration: none;
+            }
+            .entry-meta {
+              display: flex;
+              h2 {
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+              }
+              .source {
+                margin: 0;
+                padding: 0;
+                color: $color__background-body;
+                a {
+                  color: $color__text-main;
+                  font-family: $font__main;
+                  font-style: italic;
+                  font-size: 1.25rem;
+                  font-weight: lighter;
+                  text-decoration: none;
+                }
+              }
             }
           }
+          button {
+            background: transparent;
+            box-shadow: none;
+            border: 1px solid #00cc00;
+            color: $color__text-main;
+            font-size: 1rem;
+            font-family: $font__main;
+            font-weight: lighter;
+            text-shadow: none;
+            padding: 0.8rem 1rem;
+          }
         }
       }
-      button {
-        background: transparent;
-        box-shadow: none;
-        border: 1px solid #00cc00;
-        color: $color__text-main;
-        font-size: 1rem;
-        font-family: $font__main;
-        font-weight: lighter;
-        text-shadow: none;
-        padding: 0.8rem 1rem;
-      }
     }
+
     .site-footer {
       .site-info {
         margin: 4rem 0;
@@ -74,8 +98,17 @@ body {
 /* Front Page */
 .home {
   .site-main {
+    .entry-content {
+      p {
+        font-size: 1.25rem;
+        @include tablet {
+          font-size: 1.7rem;
+        }
+      }
+    }
     button {
       &:hover {
+        border: 1px solid $color__link-hover;
         color: $color__link-hover;
       }
     }
@@ -85,9 +118,7 @@ body {
 /* All Pages */
 .page {
   .site-content {
-    .entry-title {
-      color: $color__background-body;
-    }
+   
     .entry-content {
       p {
         color: $color__background-body;
