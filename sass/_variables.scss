@@ -17,7 +17,7 @@ $color__border-abbr: #666;
 
 $color__link: royalblue;
 $color__link-visited: purple;
-$color__link-hover: midnightblue;
+$color__link-hover: #159f15;
 
 // Typography
 
@@ -27,5 +27,7 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-// My custom fonts
+// Media Q
+$tablet-width: 600px;
+$desktop-width: 1000px;
 

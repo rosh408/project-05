@@ -7,15 +7,24 @@
 
 ?>
 
-			</div><!-- #content -->
+</div><!-- #content -->
 
-			<footer id="colophon" class="site-footer" role="contentinfo">
-				<div class="site-info">
-				</div><!-- .site-info -->
-			</footer><!-- #colophon -->
-		</div><!-- #page -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div class="site-info">
 
-		<?php wp_footer(); ?>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="first-three-nav">
+				<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+			</div>
+			<p>Brought to you by <a class="red-link" href="https://redacademy.com/vancouver/"> &nbsp RED Academy</a></p>
+		</nav><!-- #site-navigation -->
 
-	</body>
+	</div><!-- .site-info -->
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
+
 </html>

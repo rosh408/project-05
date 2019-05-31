@@ -58,10 +58,13 @@ add_filter( 'stylesheet_uri', 'qod_minified_css', 10, 2 );
 function qod_scripts() {
 	wp_enqueue_style( 'qod-style', get_stylesheet_uri() );
 
+	$script_url = get_template_directory_uri() . "/build/js/scripts.min.js";
+	wp_enqueue_script("jquery");
+    wp_enqueue_script("qod-scripts",$script_url, array("jquery"), false, true);
+	
 	// to do add font awesome wp_enqueue_style, used for quotes
 	// try adding the quotes with css ::after and ::before pseudo element
 	
-	// to do add your own script.js file wp_enqueue_script
 	wp_localize_script("qod-scripts", "api_vars", array(
         "rest_url" => rest_url(),
         "wpapi_nonce" => wp_create_nonce("wp_rest"),

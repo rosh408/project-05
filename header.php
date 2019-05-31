@@ -25,7 +25,7 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
 				<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<a href="<?php echo get_the_permalink(); ?>">
+				<a href="<?php echo get_home_url(); ?>" rel="home">
 				<img src="<?php echo get_template_directory_uri() . "/assets/images/qod-logo.svg"; ?>">
 			</a>
 

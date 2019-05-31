@@ -5,28 +5,53 @@
 /* Default Page Styling */
 body {
   background-color: #222222;
-}
-
-/* Front Page */
-.home {
-  .site-content {
-    .type-post {
-        p, h2 {
-            color: $color__background-body;
-            font-family: $font__main;
-            font-weight: lighter;
-        }
-      .entry-content {
-        p {
-        }
-      }
-      .entry-meta {
-        h2 {
-          
+  .hfeed {
+    padding: 2rem 1.4rem;
+    .side-header {
+      .site-branding {
+        a {
+          img {
+            height: auto;
+            width: 300px;
+          }
         }
       }
     }
-    button {
+    .site-content {
+      .type-post {
+        p,
+        h2 {
+          color: $color__background-body;
+          font-family: $font__main;
+          font-weight: lighter;
+        }
+        .entry-content {
+          p {
+          }
+        }
+        .entry-meta {
+          display: flex;
+          h2 {
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+          }
+          .source {
+            margin: 0;
+            padding: 0;
+            color: $color__background-body;
+            a {
+              color: $color__text-main;
+              font-family: $font__main;
+              font-style: italic;
+              font-size: 1.25rem;
+              font-weight: lighter;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      button {
         background: transparent;
         box-shadow: none;
         border: 1px solid #00cc00;
@@ -35,12 +60,42 @@ body {
         font-family: $font__main;
         font-weight: lighter;
         text-shadow: none;
-        padding: .8rem 1rem;
-        
+        padding: 0.8rem 1rem;
+      }
+    }
+    .site-footer {
+      .site-info {
+        margin: 4rem 0;
+      }
     }
   }
 }
 
+/* Front Page */
+.home {
+  .site-main {
+    button {
+      &:hover {
+        color: $color__link-hover;
+      }
+    }
+  }
+}
+
+/* All Pages */
+.page {
+  .site-content {
+    .entry-title {
+      color: $color__background-body;
+    }
+    .entry-content {
+      p {
+        color: $color__background-body;
+        font-weight: lighter;
+      }
+    }
+  }
+}
 /* All Archives Page */
 
 /* Submit a Quote Page */
