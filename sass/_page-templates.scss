@@ -106,6 +106,13 @@ body {
         }
       }
     }
+    .entry-meta {
+      .source {
+        a {
+          line-height: 2rem;
+        }
+      }
+    }
     button {
       &:hover {
         border: 1px solid $color__link-hover;

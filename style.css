@@ -717,6 +717,9 @@ body {
     .home .site-main .entry-content p {
       font-size: 1.7rem; } }
 
+.home .site-main .entry-meta .source a {
+  line-height: 2rem; }
+
 .home .site-main button:hover {
   border: 1px solid #159f15;
   color: #159f15; }

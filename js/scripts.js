@@ -17,11 +17,17 @@
           'wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1'
       })
         .done(function(data) {
-          const randomQuote = data[0];
-          console.log(randomQuote);
-          // update the dom with the returned quote
-          history.pushState(null, null, randomQuote.slug);
-          // $('.entry-content p').html();
+          const title = data[0].title.rendered;
+          const content = data[0].content.rendered;
+          const source = data[0]._qod_quote_source;
+          const sourceUrl = data[0]._qod_quote_source_url;
+          const sourceTemplate = `<a href="${sourceUrl}">${source}</a>`;
+
+          history.pushState(null, null, data[0].slug);
+          $('.entry-content p').html(content);
+          $('.entry-title').html(title);
+          $('.source').html(sourceTemplate);
+          // console.log(data[0]);
         })
         .fail(function(error) {
           console.log(error);
@@ -34,41 +40,39 @@
 
     function postQuote(event) {
       event.preventDefault();
-      console.log('form submitted');
-      // TODO write ajax post method
-
       const quoteAuthor = $('#quote-author').val();
+      const quoteContent = $('#quote-content').val();
+      const quoteSource = $('#quote-source').val();
+      const quoteSoUrl = $('#quote-source-url').val();
+      console.log('form submitted');
 
-      if(quoteAuthor.length !== '') {
+      if (quoteAuthor.length !== '') {
         // check if the field is empty
         postAjax();
       }
-
-      function postAjax(){
-
-      $.ajax({
-        method: 'post',
-        url: api_vars.rest_url + 'wp/v2/posts',
-        data: {
-          // TODO use the form input .val() for the title, content
-          title: quoteAuthor,
-          content: 'The most amazing quote by Gordon Ramsey',
-          status: 'pending',
-          // _qod_quote_source:
-          // _qod_quote_source_url: 
-        },
-        beforeSend: function(xhr){
-           xhr.setRequestHeader('X-WP-Nonce', api_vars.wpapi_nonce);
-        }
-      })
-        .done(function() {
-         console.log('great success') ;
-         $('#quote-submission-form').slideUp('2000');
-        }).fail(function() {
-          console.log('not so great');
-        });
+      function postAjax() {
+        $.ajax({
+          method: 'post',
+          url: api_vars.rest_url + 'wp/v2/posts',
+          data: {
+            title: quoteAuthor,
+            content: quoteContent,
+            status: 'pending',
+            _qod_quote_source: quoteSource,
+            _qod_quote_source_url: quoteSoUrl
+          },
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.wpapi_nonce);
+          }
+        })
+          .done(function() {
+            console.log('great success');
+            $('#quote-submission-form').slideUp('2000');
+          })
+          .fail(function() {
+            console.log('not so great');
+          });
       }
     } // end of postQuote
-
   });
 })(jQuery);
