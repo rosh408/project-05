@@ -15,10 +15,8 @@ body {
         a {
           max-width: 100%;
           img {
-            height: auto;
-            width: 300px;
             @include desktop {
-              width: 50rem;
+              // width: 30px;
             }
           }
         }
@@ -26,32 +24,36 @@ body {
     }
     .site-content {
       @include desktop {
-        margin: 4rem 5rem;
+        display: flex;
+        justify-content: center;
+        max-width: 1050px;
+        margin: 4rem 6rem 0 10rem;
+        position: relative;
+        &::before {
+          font-family: 'FontAwesome';
+          font-weight: 400;
+          font-size: 8.4rem;
+          content: '\f10d';
+          position: absolute;
+          left: 0;
+        }
+        &::after {
+          font-family: 'FontAwesome';
+          font-weight: 400;
+          font-size: 8.4rem;
+          content: '\f10e';
+          position: absolute;
+          right: 0;
+        }
       }
       .content-area {
         @include desktop {
-          display: flex;
-          justify-content: center;
-          &::before {
-            font-family: 'FontAwesome';
-            font-weight: 400;
-            font-size: 8.4rem;
-            content: '\f10d';
-            position: absolute;
-            left: 80px;
-          }
-          &::after {
-            font-family: 'FontAwesome';
-            font-weight: 400;
-            font-size: 8.4rem;
-            content: '\f10e';
-            position: absolute;
-            right: 80px;
-          }
+          // max-width: 700px;
         }
+
         .site-main {
           @include desktop {
-            width: 30rem;
+            width: 41vw;
             text-align: center;
           }
           .type-post {

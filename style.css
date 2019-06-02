@@ -669,40 +669,34 @@ body {
         text-align: center; } }
     body .hfeed .side-header .site-branding a {
       max-width: 100%; }
-      body .hfeed .side-header .site-branding a img {
-        height: auto;
-        width: 300px; }
-        @media (min-width: 1000px) {
-          body .hfeed .side-header .site-branding a img {
-            width: 50rem; } }
     @media (min-width: 1000px) {
       body .hfeed .site-content {
-        margin: 4rem 5rem; } }
-    @media (min-width: 1000px) {
-      body .hfeed .site-content .content-area {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
-                justify-content: center; }
-        body .hfeed .site-content .content-area::before {
+                justify-content: center;
+        max-width: 1050px;
+        margin: 4rem 6rem 0 10rem;
+        position: relative; }
+        body .hfeed .site-content::before {
           font-family: 'FontAwesome';
           font-weight: 400;
           font-size: 8.4rem;
           content: '\f10d';
           position: absolute;
-          left: 80px; }
-        body .hfeed .site-content .content-area::after {
+          left: 0; }
+        body .hfeed .site-content::after {
           font-family: 'FontAwesome';
           font-weight: 400;
           font-size: 8.4rem;
           content: '\f10e';
           position: absolute;
-          right: 80px; } }
+          right: 0; } }
     @media (min-width: 1000px) {
       body .hfeed .site-content .content-area .site-main {
-        width: 30rem;
+        width: 41vw;
         text-align: center; } }
     @media (min-width: 1000px) {
       body .hfeed .site-content .content-area .site-main .type-post {
