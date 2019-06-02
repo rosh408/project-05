@@ -672,57 +672,69 @@ body {
       body .hfeed .side-header .site-branding a img {
         height: auto;
         width: 300px; }
+        @media (min-width: 1000px) {
+          body .hfeed .side-header .site-branding a img {
+            width: 50rem; } }
     @media (min-width: 1000px) {
       body .hfeed .site-content {
+        margin: 4rem 5rem; } }
+    @media (min-width: 1000px) {
+      body .hfeed .site-content .content-area {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
-                justify-content: center;
-        max-width: 1120px;
-        position: relative; }
-        body .hfeed .site-content::before {
+                justify-content: center; }
+        body .hfeed .site-content .content-area::before {
           font-family: 'FontAwesome';
           font-weight: 400;
+          font-size: 8.4rem;
           content: '\f10d';
           position: absolute;
-          left: 0; }
-        body .hfeed .site-content::after {
+          left: 80px; }
+        body .hfeed .site-content .content-area::after {
           font-family: 'FontAwesome';
           font-weight: 400;
+          font-size: 8.4rem;
           content: '\f10e';
           position: absolute;
-          right: 0; } }
+          right: 80px; } }
     @media (min-width: 1000px) {
-      body .hfeed .site-content .site-main {
-        width: 50rem;
+      body .hfeed .site-content .content-area .site-main {
+        width: 30rem;
         text-align: center; } }
-    body .hfeed .site-content .site-main .type-post p,
-    body .hfeed .site-content .site-main .type-post h2 {
+    @media (min-width: 1000px) {
+      body .hfeed .site-content .content-area .site-main .type-post {
+        text-align: left; } }
+    body .hfeed .site-content .content-area .site-main .type-post p,
+    body .hfeed .site-content .content-area .site-main .type-post h2 {
       color: #fff;
       font-family: "Exo", sans-serif;
       font-weight: lighter; }
-    body .hfeed .site-content .site-main .type-post .entry-meta {
+    @media (min-width: 1000px) {
+      body .hfeed .site-content .content-area .site-main .type-post .entry-content p {
+        font-size: 2.3rem; } }
+    body .hfeed .site-content .content-area .site-main .type-post .entry-meta {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-      body .hfeed .site-content .site-main .type-post .entry-meta h2 {
+      body .hfeed .site-content .content-area .site-main .type-post .entry-meta h2 {
         margin: 0;
         padding: 0;
         white-space: nowrap; }
-      body .hfeed .site-content .site-main .type-post .entry-meta .source {
+      body .hfeed .site-content .content-area .site-main .type-post .entry-meta .source {
         margin: 0;
         padding: 0;
         color: #fff; }
-        body .hfeed .site-content .site-main .type-post .entry-meta .source a {
+        body .hfeed .site-content .content-area .site-main .type-post .entry-meta .source a {
           color: #00cc00;
           font-family: "Exo", sans-serif;
           font-style: italic;
           font-size: 1.25rem;
           font-weight: lighter;
           text-decoration: none; }
-    body .hfeed .site-content .site-main button {
+    body .hfeed .site-content .content-area .site-main button {
       background: transparent;
       -webkit-box-shadow: none;
               box-shadow: none;
