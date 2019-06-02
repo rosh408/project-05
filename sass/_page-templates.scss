@@ -168,6 +168,11 @@ body {
   .entry-title {
     color: $color__background-body;
   }
+  .entry-title,
+  .entry-content p {
+    text-align: left;
+  }
+
   .entry-content {
     p:nth-child(2n) {
       a {
@@ -179,40 +184,64 @@ body {
 
 /* Submit Quote Page */
 .page-submit {
-  .quote-submission-wrapper {
-    div {
-      margin: 1.3rem 0;
-      label {
-        color: $color__background-body;
-        font-weight: lighter;
-      }
-      input,
-      textarea {
-        background: transparent;
-        border-color: $color__text-main;
-      }
-      input[type='text'] {
-        color: $color__background-body;
-        font-weight: lighter;
-        font-family: $font__main;
-      }
-      textarea[name='quote_content'] {
-        color: $color__background-body;
-        font-weight: lighter;
-        font-family: $font__main;
-      }
-      input[type='url'] {
-        color: $color__background-body;
-        font-weight: lighter;
-        font-family: $font__main;
-      }
-    }
-    input[type='submit'] {
-      background: transparent;
-      box-shadow: none;
+  .entry-header {
+    .entry-title {
       color: $color__background-body;
-      font-family: $font__main;
+    }
+  }
+  .quote-submission {
+    @include desktop {
+      text-align: left;
+    }
+    p {
+      color: $color__background-body;
       font-weight: lighter;
+    }
+    a {
+      text-decoration: none;
+    }
+    .quote-submission-wrapper {
+      div {
+        margin: 1.3rem 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        label {
+          color: $color__background-body;
+          font-weight: lighter;
+        }
+        input,
+        textarea {
+          background: transparent;
+          border-color: $color__text-main;
+        }
+        input[type='text'] {
+          color: $color__background-body;
+          font-weight: lighter;
+          font-family: $font__main;
+          width: 50%;
+        }
+        textarea[name='quote_content'] {
+          color: $color__background-body;
+          font-weight: lighter;
+          font-family: $font__main;
+        }
+        input[type='url'] {
+          color: $color__background-body;
+          font-weight: lighter;
+          font-family: $font__main;
+          width: 50%;
+        }
+      }
+      input[type='submit'] {
+        background: transparent;
+        box-shadow: none;
+        color: $color__text-main;
+        font-family: $font__main;
+        font-weight: lighter;
+        border-color: $color__text-main;
+        text-shadow: none;
+      }
     }
   }
 }
@@ -228,6 +257,9 @@ body {
     .entry-title,
     h2 {
       color: $color__background-body;
+      @include desktop {
+        text-align: left;
+      }
     }
     ul {
       margin: 0;
@@ -243,6 +275,9 @@ body {
           font-size: 1rem;
           &::hover {
             color: $color__link-hover;
+          }
+          @include desktop {
+            font-size: 1.25rem;
           }
         }
       }
