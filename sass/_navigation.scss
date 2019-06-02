@@ -31,17 +31,24 @@ a {
   display: block;
   float: left;
   width: 100%;
-  // border: 1px solid $color__text-main;
   display: flex;
   flex-direction: column;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    
+  }
   ul {
-    li {
+    li:nth-child(2n),
+    li:nth-child(3n) {
+      padding-left: 0.7rem;
+      border-left: 1px solid $color__background-body;
+    }
+    li:nth-child(3n) {
+      @include tablet {
       border-right: 1px solid $color__background-body;
-	}
-	li:nth-child(2n),
-	li:nth-child(3n) {
-		padding-left: .7rem;
-	}
+      }
+    }
   }
   ul li a,
   p {
@@ -54,8 +61,12 @@ a {
     padding: 0;
     display: flex;
     margin-top: 0.8rem;
+    @include tablet {
+      margin-top: 0;
+      padding-left: .7rem;
+    }
     .red-link {
-	  padding: 0;
+      padding: 0;
     }
   }
 

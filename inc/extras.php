@@ -54,3 +54,12 @@ function qod_modify_archives( $query ) {
 }
 
 add_action('pre_get_posts', 'qod_modify_archives');
+
+function qod_body_class_for_pages( $classes ) {
+    if ( is_singular( 'page' ) ) {
+        global $post;
+        $classes[] = 'page-' . $post->post_name;
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'qod_body_class_for_pages' );

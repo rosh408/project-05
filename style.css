@@ -462,11 +462,22 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
-  .main-navigation ul li {
-    border-right: 1px solid #fff; }
+  @media (min-width: 600px) {
+    .main-navigation {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   .main-navigation ul li:nth-child(2n),
   .main-navigation ul li:nth-child(3n) {
-    padding-left: .7rem; }
+    padding-left: 0.7rem;
+    border-left: 1px solid #fff; }
+  @media (min-width: 600px) {
+    .main-navigation ul li:nth-child(3n) {
+      border-right: 1px solid #fff; } }
   .main-navigation ul li a,
   .main-navigation p {
     padding-right: 0.7rem; }
@@ -479,6 +490,10 @@ a {
     display: -ms-flexbox;
     display: flex;
     margin-top: 0.8rem; }
+    @media (min-width: 600px) {
+      .main-navigation p {
+        margin-top: 0;
+        padding-left: .7rem; } }
     .main-navigation p .red-link {
       padding: 0; }
   .main-navigation ul {
@@ -655,48 +670,59 @@ body {
     body .hfeed .side-header .site-branding a {
       max-width: 100%; }
       body .hfeed .side-header .site-branding a img {
-        height: 2rem;
+        height: auto;
         width: 300px; }
     @media (min-width: 1000px) {
       body .hfeed .site-content {
-        text-align: center; }
-        body .hfeed .site-content .content-area {
-          position: relative; }
-          body .hfeed .site-content .content-area::before {
-            font-family: 'FontAwesome';
-            font-weight: 400;
-            content: '\f10d';
-            position: absolute; }
-          body .hfeed .site-content .content-area::after {
-            font-family: 'FontAwesome';
-            font-weight: 400;
-            content: '\f10e';
-            position: absolute; } }
-    body .hfeed .site-content .content-area .site-main .type-post p,
-    body .hfeed .site-content .content-area .site-main .type-post h2 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        max-width: 1120px;
+        position: relative; }
+        body .hfeed .site-content::before {
+          font-family: 'FontAwesome';
+          font-weight: 400;
+          content: '\f10d';
+          position: absolute;
+          left: 0; }
+        body .hfeed .site-content::after {
+          font-family: 'FontAwesome';
+          font-weight: 400;
+          content: '\f10e';
+          position: absolute;
+          right: 0; } }
+    @media (min-width: 1000px) {
+      body .hfeed .site-content .site-main {
+        width: 50rem;
+        text-align: center; } }
+    body .hfeed .site-content .site-main .type-post p,
+    body .hfeed .site-content .site-main .type-post h2 {
       color: #fff;
       font-family: "Exo", sans-serif;
       font-weight: lighter; }
-    body .hfeed .site-content .content-area .site-main .type-post .entry-meta {
+    body .hfeed .site-content .site-main .type-post .entry-meta {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-      body .hfeed .site-content .content-area .site-main .type-post .entry-meta h2 {
+      body .hfeed .site-content .site-main .type-post .entry-meta h2 {
         margin: 0;
         padding: 0;
         white-space: nowrap; }
-      body .hfeed .site-content .content-area .site-main .type-post .entry-meta .source {
+      body .hfeed .site-content .site-main .type-post .entry-meta .source {
         margin: 0;
         padding: 0;
         color: #fff; }
-        body .hfeed .site-content .content-area .site-main .type-post .entry-meta .source a {
+        body .hfeed .site-content .site-main .type-post .entry-meta .source a {
           color: #00cc00;
           font-family: "Exo", sans-serif;
           font-style: italic;
           font-size: 1.25rem;
           font-weight: lighter;
           text-decoration: none; }
-    body .hfeed .site-content .content-area .site-main button {
+    body .hfeed .site-content .site-main button {
       background: transparent;
       -webkit-box-shadow: none;
               box-shadow: none;
@@ -707,8 +733,9 @@ body {
       font-weight: lighter;
       text-shadow: none;
       padding: 0.8rem 1rem; }
-    body .hfeed .site-footer .site-info {
-      margin: 4rem 0; }
+    body .hfeed .site-footer .site-info .main-navigation {
+      margin-top: 4rem;
+      margin-bottom: 4rem; }
 
 /* Front Page */
 .home .site-main .entry-content p {
@@ -717,8 +744,12 @@ body {
     .home .site-main .entry-content p {
       font-size: 1.7rem; } }
 
+.home .site-main .entry-meta .entry-title {
+  font-size: 1.2rem; }
+
 .home .site-main .entry-meta .source a {
-  line-height: 2rem; }
+  line-height: 2rem;
+  font-size: 1.2rem; }
 
 .home .site-main button:hover {
   border: 1px solid #159f15;
@@ -729,5 +760,70 @@ body {
   color: #fff;
   font-weight: lighter; }
 
+/* About Page */
+.page-page-about .entry-title {
+  color: #fff; }
+
+.page-page-about .entry-content p:nth-child(2n) a {
+  text-decoration: none; }
+
+/* Submit Quote Page */
+.page-submit .quote-submission-wrapper div {
+  margin: 1.3rem 0; }
+  .page-submit .quote-submission-wrapper div label {
+    color: #fff;
+    font-weight: lighter; }
+  .page-submit .quote-submission-wrapper div input,
+  .page-submit .quote-submission-wrapper div textarea {
+    background: transparent;
+    border-color: #00cc00; }
+  .page-submit .quote-submission-wrapper div input[type='text'] {
+    color: #fff;
+    font-weight: lighter;
+    font-family: "Exo", sans-serif; }
+  .page-submit .quote-submission-wrapper div textarea[name='quote_content'] {
+    color: #fff;
+    font-weight: lighter;
+    font-family: "Exo", sans-serif; }
+  .page-submit .quote-submission-wrapper div input[type='url'] {
+    color: #fff;
+    font-weight: lighter;
+    font-family: "Exo", sans-serif; }
+
+.page-submit .quote-submission-wrapper input[type='submit'] {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  font-family: "Exo", sans-serif;
+  font-weight: lighter; }
+
 /* All Archives Page */
+.page-archives .site-content .post-archives,
+.page-archives .site-content .category-archives,
+.page-archives .site-content .category-archives {
+  margin: 2rem 0; }
+
+.page-archives .site-content .entry-title,
+.page-archives .site-content h2 {
+  color: #fff; }
+
+.page-archives .site-content ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .page-archives .site-content ul li {
+    list-style: none;
+    padding-right: 1.4rem;
+    line-height: 2rem; }
+    .page-archives .site-content ul li a {
+      text-decoration: none;
+      font-size: 1rem; }
+      .page-archives .site-content ul li a::hover {
+        color: #159f15; }
+
 /* Submit a Quote Page */
