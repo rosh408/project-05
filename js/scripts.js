@@ -3,7 +3,6 @@
   $(function() {
     let lastPage = '';
 
-    // events
     $('#new-quote-button').on('click', getRandomQuote);
     $('#quote-submission-form').on('submit', postQuote);
 
@@ -22,16 +21,20 @@
           const source = data[0]._qod_quote_source;
           const sourceUrl = data[0]._qod_quote_source_url;
           const sourceTemplate = `<a href="${sourceUrl}">&nbsp${source}</a>`;
-          const comma = `,`;
+          const sourceTemplateSource = `<a>${source}</a>`
+
+          if (sourceUrl !== '') {
+          $('.source').html(sourceTemplate);
+          } else {
+          $('.source').html(sourceTemplateSource);
+          }
 
           history.pushState(null, null, data[0].slug);
           $('.entry-content p').html(content);
           $('.entry-title').html(title);
-          $('.source').html(comma);
-          $('.source').html(sourceTemplate);
           
         })
-        .fail(function(error) {
+        .fail(function() {
           alert('Sorry there was an error!');          
         });
       $(window).on('popstate', function() {
