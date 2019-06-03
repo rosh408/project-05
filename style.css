@@ -471,6 +471,11 @@ a {
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row; } }
+  @media (min-width: 1000px) {
+    .main-navigation {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; } }
   .main-navigation ul li:nth-child(2n),
   .main-navigation ul li:nth-child(3n) {
     padding-left: 0.7rem;
@@ -697,7 +702,7 @@ body {
     @media (min-width: 1000px) {
       body .hfeed .site-content .content-area .site-main {
         width: 41vw;
-        text-align: center; } }
+        text-align: left; } }
     @media (min-width: 1000px) {
       body .hfeed .site-content .content-area .site-main .type-post {
         text-align: left; } }
@@ -754,7 +759,6 @@ body {
   font-size: 1.2rem; }
 
 .home .site-main .entry-meta .source a {
-  line-height: 2rem;
   font-size: 1.2rem; }
 
 .home .site-main button:hover {
@@ -869,4 +873,37 @@ body {
         .page-archives .site-content ul li a {
           font-size: 1.25rem; } }
 
-/* Submit a Quote Page */
+@media (min-width: 1000px) {
+  .page-archives .site-content .wp-tag-cloud li a {
+    font-size: 1.25rem !important; } }
+
+/* 404 Page */
+.error404 .page-title {
+  color: #fff; }
+
+.error404 .page-content p {
+  color: #fff;
+  font-weight: lighter; }
+
+.error404 .page-content .search-form fieldset {
+  border: none; }
+  .error404 .page-content .search-form fieldset label input[type='search'] {
+    background: transparent;
+    border-color: #00cc00;
+    color: #fff;
+    font-weight: lighter; }
+  .error404 .page-content .search-form fieldset label input::-webkit-input-placeholder {
+    padding: 1rem 0.6rem; }
+  .error404 .page-content .search-form fieldset label input::-ms-input-placeholder {
+    padding: 1rem 0.6rem; }
+  .error404 .page-content .search-form fieldset label input::placeholder {
+    padding: 1rem 0.6rem; }
+  .error404 .page-content .search-form fieldset .search-submit {
+    border-color: red; }
+    .error404 .page-content .search-form fieldset .search-submit .fa-search {
+      border: none; }
+
+/* Search Results Page */
+.search-results .type-page .entry-title a {
+  text-decoration: none;
+  color: #fff; }

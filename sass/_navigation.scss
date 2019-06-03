@@ -36,7 +36,9 @@ a {
   @include tablet {
     display: flex;
     flex-direction: row;
-    
+  }
+  @include desktop {
+    justify-content: flex-end;
   }
   ul {
     li:nth-child(2n),

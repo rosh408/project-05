@@ -14,11 +14,6 @@ body {
       .site-branding {
         a {
           max-width: 100%;
-          img {
-            @include desktop {
-              // width: 30px;
-            }
-          }
         }
       }
     }
@@ -47,14 +42,10 @@ body {
         }
       }
       .content-area {
-        @include desktop {
-          // max-width: 700px;
-        }
-
         .site-main {
           @include desktop {
             width: 41vw;
-            text-align: center;
+            text-align: left;
           }
           .type-post {
             @include desktop {
@@ -137,7 +128,7 @@ body {
       }
       .source {
         a {
-          line-height: 2rem;
+          // line-height: 2rem;
           font-size: 1.2rem;
         }
       }
@@ -282,7 +273,61 @@ body {
         }
       }
     }
+    .wp-tag-cloud {
+      li {
+        a {
+          @include desktop {
+            font-size: 1.25rem !important;
+          }
+        }
+      }
+    }
   }
 }
 
-/* Submit a Quote Page */
+/* 404 Page */
+.error404 {
+  .page-title {
+    color: $color__background-body;
+  }
+  .page-content {
+    p {
+      color: $color__background-body;
+      font-weight: lighter;
+    }
+    .search-form {
+      fieldset {
+        border: none;
+        label {
+          input[type='search'] {
+            background: transparent;
+            border-color: $color__text-main;
+            color: $color__background-body;
+            font-weight: lighter;
+          }
+          input::placeholder {
+            padding: 1rem 0.6rem;
+          }
+        }
+        .search-submit {
+          border-color: red;
+          .fa-search {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Search Results Page */
+.search-results {
+  .type-page {
+    .entry-title {
+      a {
+        text-decoration: none;
+        color: $color__background-body;
+      }
+    }
+  }
+}

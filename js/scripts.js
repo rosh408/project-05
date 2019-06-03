@@ -21,17 +21,18 @@
           const content = data[0].content.rendered;
           const source = data[0]._qod_quote_source;
           const sourceUrl = data[0]._qod_quote_source_url;
-          const sourceTemplate = `<a href="${sourceUrl}">${source}</a>`;
+          const sourceTemplate = `<a href="${sourceUrl}">&nbsp${source}</a>`;
+          const comma = `,`;
 
           history.pushState(null, null, data[0].slug);
           $('.entry-content p').html(content);
           $('.entry-title').html(title);
+          $('.source').html(comma);
           $('.source').html(sourceTemplate);
-          // console.log(data[0]);
+          
         })
         .fail(function(error) {
-          console.log(error);
-          // append a message telling the user something went wrong
+          alert('Sorry there was an error!');          
         });
       $(window).on('popstate', function() {
         window.location.replace(lastPage);
@@ -44,10 +45,8 @@
       const quoteContent = $('#quote-content').val();
       const quoteSource = $('#quote-source').val();
       const quoteSoUrl = $('#quote-source-url').val();
-      console.log('form submitted');
 
       if (quoteAuthor.length !== '') {
-        // check if the field is empty
         postAjax();
       }
       function postAjax() {
@@ -66,11 +65,11 @@
           }
         })
           .done(function() {
-            console.log('great success');
             $('#quote-submission-form').slideUp('2000');
+            alert('Quote has been submitted');
           })
           .fail(function() {
-            console.log('not so great');
+            alert('Sorry there was an error!');
           });
       }
     } // end of postQuote
